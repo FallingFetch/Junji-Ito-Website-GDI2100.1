@@ -16,6 +16,6 @@ $(function () {
     });
     $("#dropdown-button").click(function () {
         $("nav > ul").toggleClass("active")
-        $("nav > ul").css("top",$("nav").outerHeight())
+        $("nav > ul").css("top", $("nav").outerHeight())
     })
 })

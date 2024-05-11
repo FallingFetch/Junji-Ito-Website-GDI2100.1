@@ -63,6 +63,7 @@ $(function () {
     }
 
     //this sets the inner html to the corresponding key value pairs, except for the img where i set the attrubute to src to link the appropriate img
+    document.title = book.title
     title.innerHTML = book.title
     date.innerHTML = book.date
     artAndStory.innerHTML = book.artandstory
