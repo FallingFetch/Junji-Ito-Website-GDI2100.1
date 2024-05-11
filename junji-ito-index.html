@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- The code below gives the browers instruction on how to control the page's dimensions, making it the width of the device the page is being viewed from. the initial scale 1.0 sets the initial zoom level when the browser first loads, this is important for making the website responsive, I found this information at https://www.w3schools.com/css/css_rwd_viewport.asp#:~:text=The%20viewport%20is%20the%20user%27s,than%20on%20a%20computer%20screen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junji Ito Home</title>
+    <!-- This is a link to FontAwesome's CDN (content delivery network) which I need for the arrow icon at the bottom of my page -->
+    <script src="https://kit.fontawesome.com/8972496c6b.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/junji-ito-favicon-new-resized.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="nav.js"></script>
+</head>
+
+<!-- I am choosing to format my code in a way that makes it the most readable, this means some open and close tags will be on the same line as it is short (like h tags), and some text like paragraphs will be on a serepate line due to the volume of text-->
+<!-- I am purposeful in where I include using a title with a link, this is because on the navigation bar and h4 tags where the link is taking the user to the page of the same name as the text, the title would only be repeating the text the user is already hovering over. However on the imgaes while I plan on making movement when the mouse hovers over them to make it clear the pictures can be clicked, for extra ease of navigation I am including a title with them. -->
+<!-- The placeholder images I have chosen are optimised for the web, however due to many different image sizes, they are sometimes warped when specifying the width and height of the image that will be used in the final website -->
+
+<!-- LINKS TO ALL IMG REFERENCES ARE IN THE PRIVACY POLICY PDF -->
+
+<body>
+    <header id="header">
+
+        <!-- ==========NAVIGATION========== -->
+        <nav>
+            <a href="junji-ito-index.html"> <img src="img/junji-ito-logo.png" alt="Junji Ito written in a horror font">
+            </a>
+            <i id="dropdown-button" class="fa-solid fa-bars fa-2xl"></i>
+            <ul>
+                <!-- To create the dropdown menu in CSS, I have created lists within the lists of the visible navigation menu. This follows the same format as demonstarted at https://www.w3schools.com/howto/howto_css_dropdown.asp but instead of using divs, i have used unordered lists and list items that I will give classes when doing the CSS-->
+                <li class="dropdown-nav"><a href="junji-ito.html">Junji Ito</a></li>
+                <li class="dropdown-nav"><a href="manga.html">Manga</a>
+                    <div>
+                        <ul>
+                            <li><a href="books.html">Published<br>Books</a></li>
+                            <li><a href="upcoming.html">Upcoming</a></li>
+                            <li><a href="worklist.html">Work List</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="adaptations.html">Adaptations</a>
+                    <div>
+                        <ul>
+                            <li><a href="tv.html">TV Shows</a></li>
+                            <li><a href="movies.html">Movies</a></li>
+                            <li><a href="unofficial.html">Unofficial</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="related.html">Related</a>
+                    <div>
+                        <ul>
+                            <li><a href="articles.html">Articles</a></li>
+                            <li><a href="cameo.html">Cameos</a></li>
+                            <li><a href="inspired.html">Inspired<br>Work</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="dropdownnavbar">
+            <a href="junji-ito-index.html"> <img src="img/junji-ito-logo.png" alt="Junji Ito written in a horror font">
+            </a>
+            <ul>
+                <!-- To create the dropdown menu in CSS, I have created lists within the lists of the visible navigation menu. This follows the same format as demonstarted at https://www.w3schools.com/howto/howto_css_dropdown.asp but instead of using divs, i have used unordered lists and list items that I will give classes when doing the CSS-->
+                <li class="dropdown-nav"><a href="junji-ito.html">Junji Ito</a></li>
+                <li class="dropdown-nav"><a href="manga.html">Manga</a>
+                    <div>
+                        <ul>
+                            <li><a href="books.html">Published<br>Books</a></li>
+                            <li><a href="upcoming.html">Upcoming</a></li>
+                            <li><a href="worklist.html">Work List</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="adaptations.html">Adaptations</a>
+                    <div>
+                        <ul>
+                            <li><a href="tv.html">TV Shows</a></li>
+                            <li><a href="movies.html">Movies</a></li>
+                            <li><a href="unofficial.html">Unofficial</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="related.html">Related</a>
+                    <div>
+                        <ul>
+                            <li><a href="articles.html">Articles</a></li>
+                            <li><a href="cameo.html">Cameos</a></li>
+                            <li><a href="inspired.html">Inspired<br>Work</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ==========HEADER========== -->
+        <div id="header-img-container">
+            <!-- so, the curved header, firstly i had to create an SVG path and I used a website called https://yqnn.github.io/svg-path-editor/ and this was hard in itself having to manually change each number to effect the quadratic bezier curve until i was happy with it.
+                after this, it didnt work, because all the numbers were above 1, so it didnt know what to do, so i took the largest X and Y numbers (X=53, Y=17) and divided very number by that to essentially get a percentage. I am ready to write the code.
+                I knew i could mask an svg as well as how to mask it thanks to W3schools https://www.w3schools.com/graphics/svg_clipping_masking.asp#:~:text=SVG%20elements%20can%20be%20clipped,mask%20to%20an%20SVG%20element. except i used path instead of the exmaples on that page, as this page told me that's how you add a bezier curve https://www.w3schools.com/graphics/svg_path.asp 
+                the CSS portion is explained with the CSS code-->
+            <img src="img/header-img.png"
+                alt="Girl staring at another girl with her hair floating above her curled into spirals, a group of people are behind the girl with spiral hair staring in shock">
+            <!-- I added this text in the header-img-container div so the red text would only show on the image -->
+            <h1 id="red-junji-ito">Junji Ito</h1>
+            <!-- header only curve below -->
+            <svg>
+                <defs>
+                    <clipPath id="curved-clip" clipPathUnits="objectBoundingBox">
+                        <path
+                            d="M 0 0 L 0 0.353 Q 0.132 0.176 0.245 0.353 Q 0.321 0.471 0.434 0.765 Q 0.528 1 0.642 1 Q 0.717 1 0.811 0.765 Q 0.925 0.471 1 0.471 L 1 0 L 0 0" />
+                    </clipPath>
+                </defs>
+            </svg>
+            <!-- header only curve above -->
+        </div>
+        <h1 id="black-junji-ito">Junji Ito</h1>
+        <h3 id="catch-line">and his spine chilling worlds and art</h3>
+    </header>
+
+    <!-- ==========START OF MAIN CONTENT AREA========== -->
+    <main>
+        <!-- ==========CONTENT 1========== -->
+        <article id="intro-content-container" class="center">
+            <img src="img/index-intro-img.png"
+                alt="A photo from Uzumaki, a girl with a spiral going into her head, with a man looking at her terrified">
+            <p>
+                Welcome to the informational website on Junji Ito, his stories, his life, his inspirations and similar
+                media inspired by him. Here you can find information on Junji Ito himself, articles exploring his themes
+                and his rise in fame and detailed information on all of his work.
+            </p>
+        </article>
+
+        <article>
+            <!-- ==========CONTENT 2========== -->
+            <section class="intro-content-section">
+                <!-- this div allows for the flex function to be active on the h2 and hidden img -->
+                <div class="junji-ito-index-h2 center">
+                    <h2 class="index-h2"><a href="junji-ito.html">Junji Ito</a></h2>
+                    <!-- this image is here to provide an image the same size as the one below in order to align the h2 with the p underneath it, more explanation within the CSS -->
+                    <!-- I have also utilised aria-hidden for accesibility purposes that hide content from screen readers, which is appropriate for purely decorative content and content appearing offscreen https://www.boia.org/blog/is-it-okay-to-hide-content-from-screen-readers#:~:text=Content%20may%20be%20hidden%20from,it%20from%20the%20accessibility%20tree.-->
+                    <img class="fix-index" src="img/fix-index.png" aria-hidden="true">
+                </div>
+                <div class="junji-ito-index-content-container center">
+                    <p>
+                        Here you can read Junji Ito's biography, his inspirations, how he started making manga, and some
+                        interesting not well-known facts about his life.
+                    </p>
+                    <a href="junji-ito.html" title="Junji Ito">
+                        <img class="junji-ito-index-content-img" src="img/index-junji-ito.png"
+                            alt="A photo of Junji Ito holding up his art book Twisted Visions">
+                    </a>
+                </div>
+            </section>
+
+            <!-- ==========CONTENT 3========== -->
+            <section>
+                <div class="junji-ito-index-h2 center">
+                    <h2 class="index-h2"><a href="manga.html">Manga</a></h2>
+                    <img class="fix-index" src="img/fix-index.png" aria-hidden="true">
+                </div>
+                <div class="junji-ito-index-content-container center">
+                    <p>
+                        From published books to single stories released in magazines, here you can find all of Junji
+                        Ito's English manga.
+                    </p>
+                    <a href="manga.html" title="Manga">
+                        <img class="junji-ito-index-content-img" src="img/index-manga.png"
+                            alt="a row of Junji Ito's books, from left to right Gyo, Tomie, Uzumaki, Deserter, Frankenstein, Lovesickness, Shiver, Smashed, Soichi, Tombs, Black Paradow and Fragments of Horror">
+                    </a>
+                </div>
+            </section>
+
+            <!-- ==========CONTENT 4========== -->
+            <section>
+                <div class="junji-ito-index-h2 center">
+                    <h2 class="index-h2"><a href="adaptations.html">Adaptations</a></h2>
+                    <img class="fix-index" src="img/fix-index.png" aria-hidden="true">
+                </div>
+                <div class="junji-ito-index-content-container center">
+                    <p>
+                        There are many movies, TV shows and even video games adapting Junji Ito's work. Here you can
+                        find them all and explore some film or interactive Junji Ito content.
+                    </p>
+                    <a href="adaptations.html" title="Adaptations">
+                        <img class="junji-ito-index-content-img" src="img/index-adaptations.png"
+                            alt="an img taken from the Netlfix show Junji Ito Maniac: Japanese Tales of the Macabre, kids looking out the window to see peoples head's as baloons floating into the air with people hanging from the string of the baloon heads ">
+                    </a>
+                </div>
+            </section>
+
+            <!-- ==========CONTENT 5========== -->
+            <section>
+                <div class="junji-ito-index-h2 center">
+                    <h2 class="index-h2"><a href="related.html">Related</a></h2>
+                    <img class="fix-index" src="img/fix-index.png" aria-hidden="true">
+                </div>
+                <div class="junji-ito-index-content-container center">
+                    <p>
+                        Whether you want more information or are jumping into Junji Ito for the first time, here you can
+                        find interesting articles, his cameos, and work inspired by Junji Ito's stories.
+                    </p>
+                    <a href="related.html" title="Related">
+                        <img class="junji-ito-index-content-img" src="img/index-related.png"
+                            alt="A 2-bit image of a person looking behind them, neck turned fully to the left wearing a mask, a creepy figure, holding a book from the video game World of Horror">
+                    </a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- ==========FOOTER========== -->
+    <footer>
+        <div id="footer-img-container">
+            <img src="img/header-img.png"
+                alt="Girl staring at another girl with her hair floating above her curled into spirals, a group of people are behind the girl with spiral hair staring in shock">
+            <!-- footer only curve below -->
+            <svg>
+                <defs>
+                    <clipPath id="curved-clip-footer" clipPathUnits="objectBoundingBox">
+                        <!-- to do the footer clippath i inverted the header SVG (multiple by -1, add 1) -->
+                        <path
+                            d="M 1 1 L 1 0.647 Q 0.868 0.824 0.755 0.647 Q 0.679 0.529 0.566 0.235 Q 0.472 0 0.358 0 Q 0.283 0 0.189 0.235 Q 0.075 0.529 0 0.529 L 0 1 L 1 1" />
+                    </clipPath>
+                </defs>
+            </svg>
+            <!-- footer only curve above -->
+        </div>
+        <ul>
+            <li>
+                <p>&copy;JunjiIto11234 2024</p>
+            </li>
+            <li>
+                <address><a href="mailto:junjiito11234@gmail.com">junjiito11234@gmail.com</a></address>
+            </li>
+            <!-- I have chosen to open up the privacy policy in a seperate tab as it makes more sense when opening a document for it to not replace the page you are already on-->
+            <li><a target="_blank" href="doc/privacy-policy.pdf" type="file/pdf"> Privacy Policy</a></li>
+            <li><a href="#header"><span class="fa-solid fa-arrow-up fa-2xl"></span></a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

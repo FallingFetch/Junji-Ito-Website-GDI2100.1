@@ -1,0 +1,1038 @@
+/* 
+Author: Fetch Cater
+Date: 11/04/2024
+Version: Finished Website
+*/
+
+/*
+COLOURS
+#C0C0C0 - Light Grey 
+#262626 - Dark Grey
+#C52B2B - Red
+#FFFFFF - White
+#D9D9D9 - Hover lighter grey
+*/
+
+/* The link to my imported google font Tienne) */
+@import url('https://fonts.googleapis.com/css2?family=Tienne:wght@400;700;900&display=swap');
+
+/* some repeated templaes with have id's or class's that don't match their website name (e.g. inspired-content-box on unnofficial). this is not changed as to not repeat code for the same templates, and were named for ease of coding the first verion named after the website as oppsoed to making sense across all pages */
+
+/* ==========GLOBAL STYLES========== */
+
+body {
+    font-size: 2.3vh;
+    /* To get the font weights I searched up what a font weight is for regular text like a paragraph, 400, and for bold text, 700 */
+    font-weight: 400;
+    /* I have used sans-serif here as a backup font, although Tienne is a google font so it should be accesible for most devices */
+    font-family: 'tienne', sans-serif;
+    color: #262626;
+    width: 100%;
+    position: relative;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+    margin: 0%;
+}
+
+h1 {
+    font-size: 12vw;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 1.7em;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+a,
+a:visited {
+    color: #262626;
+    text-decoration: none;
+    margin: 0% !important;
+}
+
+a:hover {
+    /* I had to reuse similar code under the navigation nav a:hover as the colour was overiding this code, however adding !important next to it means that it will take priority no matter what, even if code below it might affect its priority */
+    color: #C52B2B !important;
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding: 0%;
+    text-align: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+/* ==========NAVIGATION========== */
+
+/* The comma acts as an 'and' to give the same declarations to multiple selctors, saving some code, https://developer.mozilla.org/en-US/docs/Web/CSS/Selector_list */
+nav a,
+nav a:visited {
+    color: #ffffff;
+}
+
+/* I am using display: flex not display: flexbox because flex is the newer terminology*/
+nav {
+    display: flex;
+    flex-direction: column;
+    /* I have used align-items center because after testing various other justifications and alignments this one worked how I wanted it to*/
+    align-items: center;
+    background-color: #262626;
+    /* vh is a measurment that directs the size to take up a % of the viewport, specifically the height, and can be used with the width as well (vw), https://www.w3schools.com/cssref/css_units.php */
+    height: 23vh;
+    position: relative;
+    z-index: 1000;
+}
+
+nav img {
+    margin-top: 1vh;
+    max-height: 13vh;
+}
+
+/* the > sign singifies that only the direct child of the element is afected by this CSS, meaning only the main menu list items are horizontal, and their menu items are unaffected*/
+nav>ul {
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+    margin-top: 1vh;
+}
+
+#dropdown-button {
+    display: none;
+}
+
+.dropdown-nav {
+    min-width: fit-content;
+    width: 20%;
+}
+
+
+/* with a combination of this website https://developer.mozilla.org/en-US/docs/Web/CSS/:hover and this website https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover i was bale to create this dropdown menu */
+.dropdown-nav ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0% 15% 8% 15%;
+    background-color: #262626;
+    border-bottom: #262626;
+    border-radius: 25px;
+}
+
+/* I can use the sibling selector (+) from the information on this website https://developer.mozilla.org/en-US/docs/Web/CSS/Next-sibling_combinator */
+.dropdown-nav a:hover+div,
+.dropdown-nav div:hover {
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown-nav li {
+    margin-top: 18%;
+}
+
+/* I needed to add a div here in order to make the drop down menu the width I want instead of the width of its parent element (the dropdown-nav unordered list), doing this allowed me to keep the drop down menu centred to its parent elemtnt and adjusting its width within that space of this div */
+.dropdown-nav div {
+    width: 100%;
+    display: none;
+}
+
+#dropdownnavbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #262626;
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    z-index: 1000;
+    top: -300px;
+    transition: all 1s ease-in-out;
+}
+
+#dropdownnavbar img {
+    max-height: 9vh;
+    margin-top: 0.5vh;
+}
+
+#dropdownnavbar>ul {
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+    margin-top: 7vh;
+    height: 100%;
+}
+
+#dropdownnavbar a,
+#dropdownnavbar a:visited {
+    color: #ffffff;
+    height: 100%;
+}
+
+/* ==========HEADER========== */
+
+#header-img-container {
+    width: 100%;
+    height: 40vh;
+    /* overflow: hidden tells everything going outside the bounds of its parent element to not be shown, in this case to not display the rest of the image extending outside of the header height. https://developer.mozilla.org/en-US/docs/Web/CSS/overflow */
+    overflow: hidden;
+    /* I used this to apply the SVG i had made onto the header-img-container div */
+    clip-path: url(#curved-clip);
+    /* it had a tiny 1 pixle gap at the top so i moved it up to be smooth with the nav bar */
+    position: relative;
+    top: -1px;
+    /* this is important in ensuring the red text is always above the black text in the h1 junji ito tag */
+    z-index: 200;
+}
+
+#header-img-container img {
+    position: relative;
+    width: 100%;
+    top: -5%;
+}
+
+#intro-content-container {
+    margin: 6% 0%;
+}
+
+#intro-content-container img {
+    margin: 0 2% 0 0;
+    height: 45vh;
+}
+
+#intro-content-container p,
+#single-content-container p {
+    width: 23%;
+    margin: 0 0 0 2%;
+    background-color: #C0C0C0;
+    /* a vmax radius looks better than a percentage (i thought it looked off and not quite even and would not curve correctly when made smaller) https://stackoverflow.com/questions/31617136/avoid-elliptical-shape-in-css-border-radius is how i found vmax  */
+    border-radius: 1.5vmax;
+    /* this padding is important since i have made the border radius quite extreme to ensure the text does not go outside of the grey area*/
+    padding: 0.5% 1%;
+    /* The align self flex end makes the p attatch to the bottom of the id intro-content-container likein my wireframes */
+    align-self: flex-end;
+}
+
+
+.title-padding {
+    padding-left: 17vw;
+}
+
+/* I have split up the code into the pages that have the same content layout as each other as this makes the most sense for not needlessly repeating code, and makes the most sense for me (sometimes as to not repeat selectors the code is in a different spot, like the junji-ito-index code for the curved header, some of that code is in the header section to not repeat the header selector */
+/* ==========JUNJI-ITO-INDEX.HTML========== */
+
+/* When i tried displaying none to remove the extra white space underneath the SVG however then didnt apply the path, so instead by making 0px high and wide it hid the SVG without removing the functionality */
+#curved-clip {
+    height: 0px;
+    width: 0px;
+}
+
+/* The top 20vh lines up with the black junji ito's 42.5 vh (dicovered through trial and error) when they are set into the position of absolute, because their parent element is different they dont have the same vertical height */
+#red-junji-ito {
+    color: #C52B2B;
+    top: 19.6vh;
+}
+
+/* the absolute position aligns the two junji ito's to their respective parent elements which i could then utilise to line up together, with the margin giving them distance from the left side of the sceen */
+#red-junji-ito,
+#black-junji-ito {
+    position: absolute;
+    margin: 0 0 0 17vw;
+}
+
+#black-junji-ito {
+    top: 42.5vh;
+}
+
+#catch-line {
+    font-size: 1.7em;
+    margin: 3% 0 3% 50%;
+}
+
+.junji-ito-index-h2 {
+    margin-top: 6vh;
+}
+
+.junji-ito-index-content-img {
+    height: 45vh;
+    transition: all 0.15s ease-in-out;
+}
+
+.junji-ito-index-content-img:hover {
+    transform: scale(1.04);
+    transition: all 0.2s ease-in-out;
+}
+
+.junji-ito-index-content-container p {
+    width: 20vw;
+    margin-right: 4%;
+    background-color: #C0C0C0;
+    border-radius: 1.5vmax;
+    padding: 0.5% 1%;
+    height: fit-content;
+}
+
+.index-h2 {
+    margin-right: 4%;
+}
+
+/* not the most elegant fix for lining up my h2 tag to the paragraoh, however by putting in an image and turning its visiblity to hidden, and making it the same size as the photo below it, I am able to make sure the h2 tag always aligns itself centre to the paragraph below, I tried looking for other solutions however this one I came up with was the only one that worked for me */
+.fix-index {
+    height: 3vh;
+    visibility: hidden
+}
+
+/* ==========JUNJI-ITO.HTML========== */
+.junji-ito-sub-container-1,
+.junji-ito-sub-container-2,
+.junji-ito-sub-container-3,
+.junji-ito-sub-container-4,
+.junji-ito-content-container-2,
+.junji-ito-content-container-3,
+.junji-ito-content-container-4,
+.junji-ito-sub-content-container-5 {
+    width: 25vw;
+    background-color: #C0C0C0;
+    border-radius: 1.5vmax;
+    padding: 0.5% 1%;
+    height: fit-content;
+}
+
+
+.junji-ito-sub-container-1 {
+    margin: 0 1vw 3vh 0;
+}
+
+.junji-ito-content-container-1 h2 {
+    padding-left: 0.2vw;
+}
+
+.junji-ito-sub-container-2 {
+    margin: 4% 1vw 3vh 0;
+}
+
+.junji-ito-content-container-2 {
+    width: 22vw;
+    margin: 5.5vh 3vw 0 1vw;
+}
+
+.junji-ito-content-container-3 {
+    width: 22vw;
+    margin: 0 1vw 0 0;
+}
+
+.junji-ito-img {
+    height: 60vh;
+    margin-top: 5.5vh;
+}
+
+.junji-ito-sub-container-3 {
+    margin: 5.5vh 5vw 3vh 4%;
+}
+
+.junji-ito-sub-container-4 {
+    margin: 0 3vw 3vh 4%;
+}
+
+.junji-ito-content-container-4 {
+    width: auto;
+}
+
+.junji-ito-content-container-5 {
+    padding-top: 5%;
+    /* I learnt gap from this page https://www.w3schools.com/cssref/css3_pr_gap.php */
+    gap: 2vw;
+    display: flex;
+    flex-direction: row !important;
+}
+
+.junji-ito-sub-content-container-5 {
+    width: auto;
+}
+
+.junji-ito-influences {
+    width: 50vw;
+    padding-right: 3vw;
+}
+
+.influences-h2-padding {
+    padding-left: 0.5vw !important;
+}
+
+/* ==========MANGA.HTML, ADAPTATIONS.HTML, RELATED.HTML, ARTICLES.HTML========== */
+
+.content-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.left-content-box {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2vw;
+    gap: 10vh;
+}
+
+.content-color {
+    width: 27vw;
+    background-color: #C0C0C0;
+    border-radius: 1.5vmax;
+    padding: 0.5vw 1vh;
+    height: fit-content;
+}
+
+.content-box-img {
+    width: 20vw;
+    padding: 0.7vh 0;
+    transition: all 0.15s ease-in-out;
+}
+
+.left-content-box h2 {
+    width: 27vw;
+    text-align: center;
+}
+
+.content-box-img:hover {
+    transform: scale(1.045);
+    transition: all 0.2s ease-in-out;
+}
+
+.centre-img-box {
+    display: flex;
+    justify-content: center;
+}
+
+.right-content-box {
+    display: flex;
+    flex-direction: column;
+    margin: 30vh 0 0 2vw;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.zero-margin {
+    margin-top: 0%;
+}
+
+.right-content-box h2 {
+    width: 27vw;
+    text-align: center;
+}
+
+/* ==========INSPIRED.HTML, UNOFFICIAL.HTML, CAMEOS.HTML, UPCOMING.HTML========== */
+
+.inspired-content-box {
+    width: 27vw;
+    background-color: #C0C0C0;
+    border-radius: 1.5vmax;
+    padding: 0.5vw 1vh;
+    height: fit-content;
+    margin-right: 3vw;
+}
+
+.inspire-box {
+    margin: 8vh 0;
+}
+
+.inspired-img {
+    height: 60vh;
+}
+
+
+/* ==========BOOKTITLE.HTML, TVSHOWTITLE.HTML, MOVIETITLE.HTML========== */
+.book-box-content-1,
+.book-box-content-2,
+.book-box-content-3,
+.book-box-content-4,
+.book-content-5 {
+    background-color: #C0C0C0;
+    border-radius: 1.5vmax;
+    padding: 0.5vw 1vh;
+    height: fit-content;
+}
+
+
+.book-content-3 {
+    display: flex;
+}
+
+.book-box-content-1 {
+    display: flex;
+    width: 22vw;
+    margin: 1vh 1vw 1vh 0;
+}
+
+.book-box-content-2 {
+    width: 28vw;
+    margin: 4vh 1vw 1vh 0;
+}
+
+.book-box-content-3 {
+    display: flex;
+    width: 13vw;
+    margin: 1vh 1vw 1vh 0;
+}
+
+.book-box-content-4 {
+    display: flex;
+    width: 20vw;
+    margin: 1vh 1vw 1vh 0;
+}
+
+.book-content {
+    display: flex;
+    justify-content: center;
+}
+
+.book-content img {
+    width: 33vw;
+    margin-top: 2vh;
+}
+
+.book-content h4 {
+    /* this ensures there is a space between the h4 tag and paragraph tag since it will not register white space without other text being around it, and instead automatically leaves no space inbetween the two*/
+    margin-right: .4vw;
+}
+
+.book-content-5 {
+    width: 32vw;
+    margin: 4vh 1vw 1vh 0;
+}
+
+.tag-underlined {
+    text-decoration: underline;
+    color: #C52B2B !important;
+}
+
+/* ==========BOOKS.HTML, TV.HTML, MOVIES.HTML, WORKLIST.HTML========== */
+
+#search-bar {
+    width: 25vw;
+    background-color: #C0C0C0;
+    border-radius: 1vmax;
+    padding: 0.8vh .5vw;
+    height: fit-content;
+    display: flex;
+    margin-left: 15vw;
+    align-items: center;
+    flex-direction: column;
+}
+
+#search-bar div {
+    display: flex;
+    align-items: center;
+}
+
+#search-bar input {
+    padding: 1vh 0;
+    width: 23vw;
+    margin-left: 0.4vw;
+    background-color: #C0C0C0;
+    border-style: none;
+    height: 15px;
+    font-size: 0.9em;
+}
+
+#search-results {
+    position: absolute;
+    display: none;
+    width: 25vw;
+    background-color: #D9D9D9;
+    border-bottom-left-radius: 1vmax;
+    border-bottom-right-radius: 1vmax;
+    padding: 0.8vh .5vw;
+    height: fit-content;
+    text-align: left;
+    flex-direction: column;
+}
+
+form {
+    display: none;
+}
+
+.fa-magnifying-glass {
+    color: #ffffff;
+}
+
+input::placeholder {
+    color: #262626;
+    font-family: 'tienne', sans-serif;
+}
+
+input:focus {
+    outline-style: none;
+}
+
+#book-list {
+    width: 25vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 2vh 0 0 15vw;
+    text-align: left;
+}
+
+#book-list li {
+    padding: 1.3vh 0vw 1.3vh 0.9vw;
+    background-color: #C0C0C0;
+    width: 100%;
+}
+
+#book-imgs {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    margin-left: 17vw;
+}
+
+#book-imgs>img {
+    display: none;
+}
+
+#book-container {
+    display: flex;
+}
+
+#book-list li:hover {
+    background-color: #D9D9D9;
+    cursor: pointer;
+}
+
+#book-list li:hover>a {
+    /* this means the linked text looks as if its being hoevered on even if the mouse is only on the box and not the actual text */
+    color: #C52B2B;
+    text-decoration: underline;
+}
+
+/*li:nth-last-child(1) targets the last child of an element (last li) https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-last-child */
+#book-list li:nth-last-child(1) {
+    border-bottom-left-radius: 1vmax;
+    border-bottom-right-radius: 1vmax;
+}
+
+/*:nth-last-child(1) targets the first child of an element (first li) https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child */
+#book-list li:nth-child(1) {
+    border-top-left-radius: 1vmax;
+    border-top-right-radius: 1vmax;
+}
+
+
+/* ==========FOOTER========== */
+
+#footer-img-container {
+    width: 100%;
+    height: 25vh;
+    overflow: hidden;
+}
+
+#curved-mask {
+    height: 0px;
+    width: 0px;
+}
+
+footer {
+    background-color: #262626;
+    width: 100%;
+    margin-top: 5vh;
+    clip-path: url(#curved-clip-footer);
+}
+
+footer a,
+footer a:visited {
+    color: #ffffff;
+    font-size: 0.8em;
+}
+
+footer p {
+    color: #ffffff;
+    margin: 0%;
+    font-size: 0.8em;
+}
+
+footer ul {
+    display: flex;
+    margin: 0%;
+    justify-content: space-evenly;
+}
+
+footer li {
+    padding: 1vh 0 1vh 0;
+}
+
+footer p {
+    padding-top: 0.7vh;
+}
+
+.fa-arrow-up:hover {
+    /* transform allows me to scale, skew, rotate or translate an element, in this case make the white arrow become bigger when hoevered over https://developer.mozilla.org/en-US/docs/Web/CSS/transform*/
+    transform: scale(1.5);
+    color: #C52B2B;
+    /* transition makes your website look animated, so intead of suddenly going from a white arrow to a larger red arrow, its transitions beteen the two states https://developer.mozilla.org/en-US/docs/Web/CSS/transition */
+    transition: all 0.15s ease-in-out;
+}
+
+.fa-arrow-up {
+    transition: all 0.15s ease-in-out;
+}
+
+footer img {
+    position: relative;
+    width: 100%;
+    top: -40%;
+}
+
+/* ==========MEDIA QUERIES========== */
+
+@media(max-width: 1200px) {
+
+    #header-img-container,
+    #dropdownnavbar,
+    #footer-img-container,
+    #book-imgs,
+    .fix-index,
+    .junji-ito-index-content-img,
+    .junji-ito-img,
+    .inspired-img,
+    .content-box img,
+    footer svg,
+    footer img {
+        display: none;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: center;
+        background-color: #262626;
+        width: 100%;
+        height: 10vh;
+    }
+
+    nav>ul {
+        justify-content: space-between;
+        margin-top: 7vh;
+        height: 100%;
+        width: 100%;
+    }
+
+    nav img {
+        max-height: 7vh;
+    }
+
+    #black-junji-ito {
+        position: relative;
+        top: 2vh;
+    }
+
+    .junji-ito-index-content-container {
+        width: 40vw;
+        justify-content: center;
+    }
+
+    #intro-content-container p {
+        width: 40vw;
+    }
+
+    #junji-ito-index-content-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .junji-ito-index-content-container p {
+        width: 40vw;
+        padding: 0%;
+        margin: 0%;
+    }
+
+    .junji-ito-index-content-container {
+        width: 100%;
+    }
+
+    #single-content-container {
+        flex-direction: row;
+    }
+
+    #single-content-container p {
+        margin: 0%;
+        width: 60vw;
+    }
+
+    .junji-ito-sub-container-1,
+    .junji-ito-content-container-2,
+    .junji-ito-sub-container-3,
+    .junji-ito-sub-container-4 {
+        width: 35vw;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    .junji-ito-sub-container-2 {
+        width: 35vw;
+    }
+
+    .junji-ito-content-container-2,
+    .junji-ito-content-container-3,
+    .book-box-content-1 {
+        width: 32vw;
+    }
+
+    .junji-ito-content-container-5 {
+        flex-direction: column !important;
+    }
+
+    .center {
+        gap: 2vw;
+    }
+
+    .junji-ito-influences {
+        padding: 0%;
+        width: 70vw;
+    }
+
+    .content-color {
+        width: 40vw;
+    }
+
+    .content-box section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0%;
+    }
+
+    .content-box {
+        flex-direction: column;
+    }
+
+    .content-box h2 {
+        margin: 0%;
+        text-align: center;
+        width: min-content;
+    }
+
+
+    .inspired-content-box {
+        width: 45vw;
+    }
+
+    #book-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #search-bar,
+    #search-results,
+    #book-list {
+        width: 50vw;
+    }
+
+    #search-bar input {
+        width: 48vw;
+    }
+
+    #book-list-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .book-box-content-2 {
+        width: 38vw;
+    }
+
+    .book-box-content-3 {
+        width: 23vw;
+    }
+
+    .book-content-3 {
+        flex-direction: column;
+    }
+
+    .book-box-content-4 {
+        width: 30vw;
+    }
+
+    .book-content img {
+        width: 40vw;
+    }
+
+    .book-content h4 {
+        /* this ensures there is a space between the h4 tag and paragraph tag since it will not register white space without other text being around it, and instead automatically leaves no space inbetween the two*/
+        margin-right: .4vw;
+    }
+
+    .book-content-5 {
+        width: 42vw;
+    }
+
+    .title-padding {
+        padding-left: 5%;
+    }
+
+    footer {
+        padding: 2vh 0 2vh 0;
+    }
+
+    .right-content-box-1,
+    .right-content-box-2 {
+        margin-top: 0%;
+    }
+
+    .right-content-box {
+        margin: 10vh 0 0 0;
+        gap: 10vh;
+    }
+
+    .right-content-box h2 {
+        width: 27vw;
+        text-align: center;
+    }
+
+    .left-content-box,
+    .index-h2 {
+        margin-right: 0%;
+    }
+
+    .left-content-1 {
+        margin-bottom: 19vh;
+    }
+
+    .left-content-2,
+    .left-content-3 {
+        margin-top: 29vh;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .center {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #intro-content-container p {
+        align-self: center;
+    }
+
+    .junji-ito-sub-container-1,
+    .junji-ito-sub-container-2,
+    .junji-ito-sub-container-3,
+    .junji-ito-sub-container-4,
+    .junji-ito-sub-container-5,
+    .junji-ito-content-container-1,
+    .junji-ito-content-container-2,
+    .junji-ito-content-container-3,
+    .junji-ito-content-container-4,
+    .junji-ito-content-container-5,
+    .junji-ito-sub-content-container-5,
+    .content-color,
+    #intro-content-container p {
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 60vw;
+        margin-left: 0%;
+        margin-right: 0%;
+        padding: 8px;
+    }
+
+    #intro-content-container img {
+        margin: 0%;
+    }
+
+    .content-box {
+        flex-direction: column;
+    }
+
+    .junji-ito-content-container-5 {
+        padding-left: 0%;
+    }
+
+    #book-list-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #search-bar,
+    #book-list {
+        margin-left: 0;
+        width: 60%;
+    }
+
+    .inspired-content-box {
+        width: 60vw;
+        margin-right: 0%;
+    }
+
+    nav {
+        justify-content: space-between;
+        padding: 5%;
+        width: auto;
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    nav>ul {
+        display: none;
+        background-color: #262626;
+        width: 100%;
+        height: 25%;
+    }
+
+    .dropdown-nav {
+        width: fit-content;
+    }
+
+    .dropdown-nav a:hover+div,
+    footer {
+        display: none;
+    }
+
+    .active {
+        display: flex;
+        position: absolute;
+        top: 600px;
+        margin-top: 0%;
+        left: 0;
+        justify-content: space-evenly;
+    }
+
+    #dropdown-button {
+        display: block;
+        color: #ffffff;
+    }
+
+    section p {
+        width: 60vw !important;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 0% !important;
+    }
+
+    .right-content-box-1 {
+        justify-items: center;
+        display: flex;
+    }
+
+}

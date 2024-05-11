@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Title</title>
+    <script src="https://kit.fontawesome.com/8972496c6b.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/junji-ito-favicon-new-resized.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="books.js"></script>
+    <script src="nav.js"></script>
+</head>
+
+<body>
+    <header id="header">
+
+        <!-- ==========NAVIGATION========== -->
+        <nav>
+            <a href="junji-ito-index.html"> <img src="img/junji-ito-logo.png" alt="Junji Ito written in a horror font">
+            </a>
+            <i id="dropdown-button" class="fa-solid fa-bars fa-2xl"></i>
+            <ul>
+                <!-- To create the dropdown menu in CSS, I have created lists within the lists of the visible navigation menu. This follows the same format as demonstarted at https://www.w3schools.com/howto/howto_css_dropdown.asp but instead of using divs, i have used unordered lists and list items that I will give classes when doing the CSS-->
+                <li class="dropdown-nav"><a href="junji-ito.html">Junji Ito</a></li>
+                <li class="dropdown-nav"><a href="manga.html">Manga</a>
+                    <div>
+                        <ul>
+                            <li><a href="books.html">Published<br>Books</a></li>
+                            <li><a href="upcoming.html">Upcoming</a></li>
+                            <li><a href="worklist.html">Work List</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="adaptations.html">Adaptations</a>
+                    <div>
+                        <ul>
+                            <li><a href="tv.html">TV Shows</a></li>
+                            <li><a href="movies.html">Movies</a></li>
+                            <li><a href="unofficial.html">Unofficial</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="related.html">Related</a>
+                    <div>
+                        <ul>
+                            <li><a href="articles.html">Articles</a></li>
+                            <li><a href="cameo.html">Cameos</a></li>
+                            <li><a href="inspired.html">Inspired<br>Work</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="dropdownnavbar">
+            <a href="junji-ito-index.html"> <img src="img/junji-ito-logo.png" alt="Junji Ito written in a horror font">
+            </a>
+            <ul>
+                <!-- To create the dropdown menu in CSS, I have created lists within the lists of the visible navigation menu. This follows the same format as demonstarted at https://www.w3schools.com/howto/howto_css_dropdown.asp but instead of using divs, i have used unordered lists and list items that I will give classes when doing the CSS-->
+                <li class="dropdown-nav"><a href="junji-ito.html">Junji Ito</a></li>
+                <li class="dropdown-nav"><a href="manga.html">Manga</a>
+                    <div>
+                        <ul>
+                            <li><a href="books.html">Published<br>Books</a></li>
+                            <li><a href="upcoming.html">Upcoming</a></li>
+                            <li><a href="worklist.html">Work List</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="adaptations.html">Adaptations</a>
+                    <div>
+                        <ul>
+                            <li><a href="tv.html">TV Shows</a></li>
+                            <li><a href="movies.html">Movies</a></li>
+                            <li><a href="unofficial.html">Unofficial</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="related.html">Related</a>
+                    <div>
+                        <ul>
+                            <li><a href="articles.html">Articles</a></li>
+                            <li><a href="cameo.html">Cameos</a></li>
+                            <li><a href="inspired.html">Inspired<br>Work</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ==========HEADER========== -->
+        <div id="header-img-container">
+            <img src="img/header-img.png"
+                alt="Girl staring at another girl with her hair floating above her curled into spirals, a group of people are behind the girl with spiral hair staring in shock">
+        </div>
+        <h1 id="title" class="title-padding">*booktitle*</h1>
+    </header>
+
+    <!-- ==========Start of Main Content Area========== -->
+    <main>
+        <!-- ==========Content 1========== -->
+        <section class="book-content">
+            <div class="book-content-1">
+                <div class="book-box-content-1">
+                    <!-- colon (:) charecter entity https://www.toptal.com/designers/htmlarrows/punctuation/colon/ -->
+                    <h4>Release date&colon;</h4>
+                    <!-- forward slash (/) charecter entity https://www.toptal.com/designers/htmlarrows/punctuation/slash/ -->
+                    <p id="date">00&sol;00&sol;000</p>
+                </div>
+                <div class="book-box-content-1">
+                    <p id="artandstory">Art by <br>
+                        Story by
+                    </p>
+                </div>
+                <div class="book-box-content-2">
+                    <h2>Blurb</h2>
+                    <p id="blurb">
+                        Sollicitudin nibh sit amet commodo nulla. Ac turpis egestas maecenas pharetra convallis posuere
+                        morbi
+                        leo urna. Ut morbi tincidunt augue interdum velit euismod. Volutpat lacus laoreet non curabitur
+                        gravida
+                        arcu ac tortor dignissim. Donec pretium vulputate sapien nec sagittis aliquam. Iaculis at erat
+                        pellentesque adipiscing. Eget nullam non nisi est. Ipsum dolor sit amet consectetur adipiscing.
+                        Donec et
+                        odio pellentesque diam volutpat commodo sed egestas. Elementum facilisis leo vel fringilla est
+                        ullamcorper eget nulla. Orci phasellus egestas tellus rutrum tellus pellentesque.
+                    </p>
+                </div>
+            </div>
+            <div class="book-content-2">
+                <img id="img" src="img/book-cover.png" alt="Cover of the book Uzumaki, 3-in-1 complete edition">
+                <div class="book-content-3">
+                    <div class="book-box-content-3">
+                        <h4>Length&colon;</h4>
+                        <p id="lengths">000</p>
+                    </div>
+                    <div class="book-box-content-4">
+                        <h4>ISBN&colon;</h4>
+                        <p id="isbn">00 000 000 000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==========Content 3========== -->
+        <section class="book-content book-flex-start">
+            <div class="book-content-5">
+                <h3>Chapters</h3>
+                <p id="chapters">
+                    Sed pulvinar proin gravida hendrerit lectus. Diam maecenas sed enim ut sem viverra aliquet eget sit.
+                    Neque viverra justo nec ultrices dui sapien eget mi proin. Non sodales neque sodales ut. Id ornare
+                    arcu
+                    odio ut. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Neque viverra justo nec
+                    ultrices
+                    dui sapien eget mi. Lorem donec massa sapien faucibus et. Neque vitae tempus quam pellentesque nec
+                    nam
+                    aliquam. Auctor urna nunc id cursus metus. Vel facilisis volutpat est velit egestas. Nunc non
+                    blandit
+                    massa enim nec dui nunc mattis. At ultrices mi tempus imperdiet nulla. Arcu ac tortor dignissim
+                    convallis aenean et tortor at risus.
+                </p>
+            </div>
+            <div class="book-content-5">
+                <h3>Background</h3>
+                <p id="background">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua. Et odio pellentesque diam volutpat. Eget duis at tellus at urna condimentum
+                    mattis.
+                    Elit pellentesque habitant morbi tristique senectus et netus et malesuada. Arcu cursus euismod quis
+                    viverra. Est placerat in egestas erat imperdiet sed. Pharetra magna ac placerat vestibulum lectus
+                    mauris
+                    ultrices eros. Metus dictum at tempor commodo ullamcorper a lacus vestibulum sed. Proin nibh nisl
+                    condimentum id venenatis. Arcu cursus euismod quis viverra nibh cras pulvinar. Nisl nisi scelerisque
+                    eu
+                    ultrices vitae auctor eu augue. Fermentum posuere urna nec tincidunt praesent semper feugiat.
+                    Pretium
+                    quam vulputate dignissim suspendisse in est ante. Sed vulputate odio ut enim blandit volutpat
+                    maecenas.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========FOOTER========== -->
+    <footer>
+        <div id="footer-img-container">
+            <img src="img/header-img.png"
+                alt="Girl staring at another girl with her hair floating above her curled into spirals, a group of people are behind the girl with spiral hair staring in shock">
+        </div>
+        <ul>
+            <li>
+                <p>&copy;JunjiIto11234 2024</p>
+            </li>
+            <li>
+                <address><a href="mailto:junjiito11234@gmail.com">junjiito11234@gmail.com</a></address>
+            </li>
+            <!-- I have chosen to open up the privacy policy in a seperate tab as it makes more sense when opening a document for it to not replace the page you are already on-->
+            <li><a target="_blank" href="doc/privacy-policy.pdf" type="file/pdf"> Privacy Policy</a></li>
+            <li><a href="#header"><span class="fa-solid fa-arrow-up fa-2xl"></span></a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

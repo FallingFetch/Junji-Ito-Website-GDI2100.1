@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <script src="https://kit.fontawesome.com/8972496c6b.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/junji-ito-favicon-new-resized.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <script src="nav.js"></script>
+</head>
+
+<body>
+    <header id="header">
+
+        <!-- ==========NAVIGATION========== -->
+        <nav>
+            <a href="junji-ito-index.html"> <img src="img/junji-ito-logo.png" alt="Junji Ito written in a horror font">
+            </a>
+            <i id="dropdown-button" class="fa-solid fa-bars fa-2xl"></i>
+            <ul>
+                <!-- To create the dropdown menu in CSS, I have created lists within the lists of the visible navigation menu. This follows the same format as demonstarted at https://www.w3schools.com/howto/howto_css_dropdown.asp but instead of using divs, i have used unordered lists and list items that I will give classes when doing the CSS-->
+                <li class="dropdown-nav"><a href="junji-ito.html">Junji Ito</a></li>
+                <li class="dropdown-nav"><a href="manga.html">Manga</a>
+                    <div>
+                        <ul>
+                            <li><a href="books.html">Published<br>Books</a></li>
+                            <li><a href="upcoming.html">Upcoming</a></li>
+                            <li><a href="worklist.html">Work List</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="adaptations.html">Adaptations</a>
+                    <div>
+                        <ul>
+                            <li><a href="tv.html">TV Shows</a></li>
+                            <li><a href="movies.html">Movies</a></li>
+                            <li><a href="unofficial.html">Unofficial</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="related.html">Related</a>
+                    <div>
+                        <ul>
+                            <li><a href="articles.html">Articles</a></li>
+                            <li><a href="cameo.html">Cameos</a></li>
+                            <li><a href="inspired.html">Inspired<br>Work</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="dropdownnavbar">
+            <a href="junji-ito-index.html"> <img src="img/junji-ito-logo.png" alt="Junji Ito written in a horror font">
+            </a>
+            <ul>
+                <!-- To create the dropdown menu in CSS, I have created lists within the lists of the visible navigation menu. This follows the same format as demonstarted at https://www.w3schools.com/howto/howto_css_dropdown.asp but instead of using divs, i have used unordered lists and list items that I will give classes when doing the CSS-->
+                <li class="dropdown-nav"><a href="junji-ito.html">Junji Ito</a></li>
+                <li class="dropdown-nav"><a href="manga.html">Manga</a>
+                    <div>
+                        <ul>
+                            <li><a href="books.html">Published<br>Books</a></li>
+                            <li><a href="upcoming.html">Upcoming</a></li>
+                            <li><a href="worklist.html">Work List</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="adaptations.html">Adaptations</a>
+                    <div>
+                        <ul>
+                            <li><a href="tv.html">TV Shows</a></li>
+                            <li><a href="movies.html">Movies</a></li>
+                            <li><a href="unofficial.html">Unofficial</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="related.html">Related</a>
+                    <div>
+                        <ul>
+                            <li><a href="articles.html">Articles</a></li>
+                            <li><a href="cameo.html">Cameos</a></li>
+                            <li><a href="inspired.html">Inspired<br>Work</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ==========HEADER========== -->
+        <div id="header-img-container">
+            <img src="img/header-img.png"
+                alt="Girl staring at another girl with her hair floating above her curled into spirals, a group of people are behind the girl with spiral hair staring in shock">
+        </div>
+        <h1 class="title-padding">Movies</h1>
+    </header>
+
+    <!-- ==========Start of Main Content Area========== -->
+    <main>
+        <!-- ==========Content 1========== -->
+        <article id="single-content-container" class="center">
+            <p>
+                The layout of this page is the same as the page <a class="tag-underlined" href="books.html">Published
+                    Books</a>. To recreate
+                this page wouldn't be showing I have learnt anymore HTML, CSS or JavaScript but would take hours to
+                compile
+                information from the internet and rewriting the same JavaScript to show these results instead of the
+                book results. The <a class="tag-underlined" href="books.html">Published Books</a> page is completely
+                finished to thoroughly
+                demonstrate the concept that would have been presented on this page.
+            </p>
+        </article>
+    </main>
+
+    <!-- ==========FOOTER========== -->
+    <footer>
+        <div id="footer-img-container">
+            <img src="img/header-img.png"
+                alt="Girl staring at another girl with her hair floating above her curled into spirals, a group of people are behind the girl with spiral hair staring in shock">
+        </div>
+        <ul>
+            <li>
+                <p>&copy;JunjiIto11234 2024</p>
+            </li>
+            <li>
+                <address><a href="mailto:junjiito11234@gmail.com">junjiito11234@gmail.com</a></address>
+            </li>
+            <!-- I have chosen to open up the privacy policy in a seperate tab as it makes more sense when opening a document for it to not replace the page you are already on-->
+            <li><a target="_blank" href="doc/privacy-policy.pdf" type="file/pdf"> Privacy Policy</a></li>
+            <li><a href="#header"><span class="fa-solid fa-arrow-up fa-2xl"></span></a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

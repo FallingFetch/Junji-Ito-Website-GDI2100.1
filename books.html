@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Published Books</title>
+    <script src="https://kit.fontawesome.com/8972496c6b.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/junji-ito-favicon-new-resized.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <script src="nav.js"></script>
+</head>
+
+<body>
+    <header id="header">
+
+        <!-- ==========NAVIGATION========== -->
+        <nav>
+            <a href="junji-ito-index.html"> <img src="img/junji-ito-logo.png" alt="Junji Ito written in a horror font">
+            </a>
+            <i id="dropdown-button" class="fa-solid fa-bars fa-2xl"></i>
+            <ul>
+                <!-- To create the dropdown menu in CSS, I have created lists within the lists of the visible navigation menu. This follows the same format as demonstarted at https://www.w3schools.com/howto/howto_css_dropdown.asp but instead of using divs, i have used unordered lists and list items that I will give classes when doing the CSS-->
+                <li class="dropdown-nav"><a href="junji-ito.html">Junji Ito</a></li>
+                <li class="dropdown-nav"><a href="manga.html">Manga</a>
+                    <div>
+                        <ul>
+                            <li><a href="books.html">Published<br>Books</a></li>
+                            <li><a href="upcoming.html">Upcoming</a></li>
+                            <li><a href="worklist.html">Work List</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="adaptations.html">Adaptations</a>
+                    <div>
+                        <ul>
+                            <li><a href="tv.html">TV Shows</a></li>
+                            <li><a href="movies.html">Movies</a></li>
+                            <li><a href="unofficial.html">Unofficial</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="related.html">Related</a>
+                    <div>
+                        <ul>
+                            <li><a href="articles.html">Articles</a></li>
+                            <li><a href="cameo.html">Cameos</a></li>
+                            <li><a href="inspired.html">Inspired<br>Work</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="dropdownnavbar">
+            <a href="junji-ito-index.html"> <img src="img/junji-ito-logo.png" alt="Junji Ito written in a horror font">
+            </a>
+            <ul>
+                <!-- To create the dropdown menu in CSS, I have created lists within the lists of the visible navigation menu. This follows the same format as demonstarted at https://www.w3schools.com/howto/howto_css_dropdown.asp but instead of using divs, i have used unordered lists and list items that I will give classes when doing the CSS-->
+                <li class="dropdown-nav"><a href="junji-ito.html">Junji Ito</a></li>
+                <li class="dropdown-nav"><a href="manga.html">Manga</a>
+                    <div>
+                        <ul>
+                            <li><a href="books.html">Published<br>Books</a></li>
+                            <li><a href="upcoming.html">Upcoming</a></li>
+                            <li><a href="worklist.html">Work List</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="adaptations.html">Adaptations</a>
+                    <div>
+                        <ul>
+                            <li><a href="tv.html">TV Shows</a></li>
+                            <li><a href="movies.html">Movies</a></li>
+                            <li><a href="unofficial.html">Unofficial</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-nav"><a href="related.html">Related</a>
+                    <div>
+                        <ul>
+                            <li><a href="articles.html">Articles</a></li>
+                            <li><a href="cameo.html">Cameos</a></li>
+                            <li><a href="inspired.html">Inspired<br>Work</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ==========HEADER========== -->
+        <div id="header-img-container">
+            <img src="img/header-img.png"
+                alt="Girl staring at another girl with her hair floating above her curled into spirals, a group of people are behind the girl with spiral hair staring in shock">
+        </div>
+        <h1 class="title-padding">Published Books</h1>
+    </header>
+
+    <!-- ==========Start of Main Content Area========== -->
+    <main>
+        <!-- ==========Content 1========== -->
+        <article id="intro-content-container" class="center">
+            <img src="img/books-intro-img.png"
+                alt="A photo of a planet with an eye coming towards people on the ground, one lady on a cross and a man holding an axe can be seen">
+            <!-- A paragraph explaing what this webpage is-->
+            <p>
+                Find a full list of all of Junji Ito's English-published work below. From single installations getting
+                deluxe editions and his newer works collaborating with other artists and writers, there's plenty to
+                choose from and love.
+            </p>
+        </article>
+        <article id="book-container">
+            <!-- ==========Content 2========== -->
+            <!-- For the search bar I have inlcuded an input type tag with the type "text" as the HTML portion of a search bar. I retrieved this information from https://www.w3schools.com/tags/tag_input.asp. Further down this resource page it describes the placeholder tag allowing me to input the text "search..." within the input bar, this page goes into further detail about this attribute https://www.w3schools.com/tags/att_input_placeholder.asp.  -->
+            <div id="book-list-container">
+                <div id="search-bar">
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input id="search-field" type="text" placeholder="Search...">
+                    </div>
+                    <ul id="search-results">
+
+                    </ul>
+                </div>
+                <!-- This will allow me to utlisise javascript to load the book-title page with queries (meaning it will load the relevant informaiton of the book onto a single 'template' inostead of dozens of html pages) https://stackoverflow.com/questions/519034/data-processing-in-html-without-server-code-using-just-javascript -->
+                <form id="special-magical-form" method="GET" action="booktitle.html">
+                    <input id="special-magical-query" type="text" name="book-title">
+                </form>
+                <ul id="book-list">
+                    <li book="black-paradox">
+                        <a href="booktitle.html?duck=fish">Black Paradox</a>
+                    </li>
+                    <li book="deserter">
+                        <a href="booktitle.html">Deserter</a>
+                    </li>
+                    <li book="fragments">
+                        <a href="booktitle.html">Fragments of Horror</a>
+                    </li>
+                    <li book="frankenstein">
+                        <a href="booktitle.html">Frankenstein</a>
+                    </li>
+                    <li book="gyo-deluxe">
+                        <a href="booktitle.html">Gyo (2-In-1 Deluxe Edition)</a>
+                    </li>
+                    <li book="gyo-1">
+                        <a href="booktitle.html">Gyo, Vol. 1</a>
+                    </li>
+                    <li book="gyo-2">
+                        <a href="booktitle.html">Gyo, Vol. 2: The Death-Stench</a>
+                    </li>
+                    <li book="collection-coloring">
+                        <a href="booktitle.html">Junji Ito Collection: A Horror Coloring</a>
+                    </li>
+                    <li book="cat-diary">
+                        <a href="booktitle.html">Junji Ito's Cat Diary: Yon & Mu</a>
+                    </li>
+                    <li book="dissolving-classrooms">
+                        <a href="booktitle.html">Junji Ito's Dissolving Classroom</a>
+                    </li>
+                    <li book="lovesickness">
+                        <a href="booktitle.html">Lovesickness</a>
+                    </li>
+                    <li book="mimi">
+                        <a href="booktitle.html">Mimi's Tales of Terror</a>
+                    </li>
+                    <li book="no-longer-human">
+                        <a href="booktitle.html">No Longer Human</a>
+                    </li>
+                    <li book="remina">
+                        <a href="booktitle.html">Remina</a>
+                    </li>
+                    <li book="sensor">
+                        <a href="booktitle.html">Sensor</a>
+                    </li>
+                    <li book="shiver">
+                        <a href="booktitle.html">Shiver: Junji Ito Selected Stories</a>
+                    </li>
+                    <li book="smashed">
+                        <a href="booktitle.html">Smashed: Junji Ito Story Collection</a>
+                    </li>
+                    <li book="soichi">
+                        <a href="booktitle.html">Soichi: Junji Ito Story Collection</a>
+                    </li>
+                    <li book="stitches">
+                        <a href="booktitle.html">Stitches</a>
+                    </li>
+                    <li book="twisted-visions">
+                        <a href="booktitle.html">The Art of Junji Ito: Twisted Visions</a>
+                    </li>
+                    <li book="liminal-zone">
+                        <a href="booktitle.html">The Liminal Zone</a>
+                    </li>
+                    <li book="tombs">
+                        <a href="booktitle.html">Tombs</a>
+                    </li>
+                    <li book="tomie-deluxe">
+                        <a href="booktitle.html">Tomie (Complete Deluxe Edition)</a>
+                    </li>
+                    <li book="uzumaki-deluxe">
+                        <a href="booktitle.html">Uzumaki (3-In-1 Deluxe Edition)</a>
+                    </li>
+                    <li book="uzumaki-coloring">
+                        <a href="booktitle.html">Uzumaki Coloring Book</a>
+                    </li>
+                    <li book="uzumaki-1">
+                        <a href="booktitle.html">Uzumaki, Volume 1</a>
+                    </li>
+                    <li book="uzumaki-2">
+                        <a href="booktitle.html">Uzumaki, Volume 2</a>
+                    </li>
+                    <li book="uzumaki-3">
+                        <a href="booktitle.html">Uzumaki, Volume 3</a>
+                    </li>
+                    <li book="venus">
+                        <a href="booktitle.html">Venus in the Blind Spot</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div id="book-imgs">
+                <img id="black-paradox" src="img/books-black-paradox.png" alt="Cover of the book Black Paradox">
+                <img id="deserter" src="img/books-deserter.png" alt="Cover of the book Deserter">
+                <img id="fragments" src="img/books-fragments-of-horror.png" alt="Cover of the book Fragments of Horror">
+                <img id="frankenstein" src="img/books-frankenstein.png" alt="Cover of the book Frankenstein">
+                <img id="gyo-deluxe" src="img/books-gyo-2-in-1-deluxe-edition.png"
+                    alt="Cover of the book Gyo-2-in-1-deluxe">
+                <img id="gyo-1" src="img/books-gyo-vol-1.png" alt="Cover of the book Gyo, Volume 1">
+                <img id="gyo-2" src="img/books-gyo-vol-2.png" alt="Cover of the book Gyo, Volume 2">
+                <img id="collection-coloring" src="img/books-junji-ito-collection-coloring-book.png"
+                    alt="Cover of the book Junji Ito Collection, a Horror Coloring Book">
+                <img id="cat-diary" src="img/books-junji-itos-cat-diary.png"
+                    alt="Cover of the book Junji Ito's Cat Diary: Yon and Mu">
+                <img id="dissolving-classrooms" src="img/books-junji-itos-dissolving-classroom.png"
+                    alt="Cover of the book Junji Ito's Dissolving Classroom">
+                <img id="lovesickness" src="img/books-lovesickness.png" alt="Cover of the book Lovesickness">
+                <img id="mimis-tales" src="img/books-mimis-tales-of-terror.png"
+                    alt="Cover of the book Mimi's Tale of Terror">
+                <img id="no-longer-human" src="img/books-no-longer-human.png" alt="Cover of the book No Longer Human">
+                <img id="remina" src="img/books-remina.png" alt="Cover of the book Remina">
+                <img id="sensor" src="img/books-sensor.png" alt="Cover of the book Sensor">
+                <img id="shiver" src="img/books-shiver.png" alt="Cover of the book Shiver">
+                <img id="smashed" src="img/books-smashed.png" alt="Cover of the book Smashed">
+                <img id="soichi" src="img/books-soichi.png" alt="Cover of the book Soichi">
+                <img id="stitches" src="img/books-stitches.png" alt="Cover of the book Stitches">
+                <img id="twisted-visions" src="img/books-the-art-of-junji-ito-twisted-visions.png"
+                    alt="Cover of the book Twisted Visions">
+                <img id="liminal-zone" src="img/books-the-liminal-zone.png" alt="Cover of the bookThe Liminal Zone">
+                <img id="tombs" src="img/books-tombs.png" alt="Cover of the book Tombs">
+                <img id="tomie-deluxe" src="img/books-tomie-complete.png" alt="Cover of the book Tomie Deluxe Edition">
+                <img id="uzumaki-deluxe" src="img/books-uzumaki-3-in-1-deluxe-edition.png"
+                    alt="Cover of the book Uzumaki, 3-in-1 complete edition">
+                <img id="uzumaki-coloring" src="img/books-uzumaki-coloring-book.png"
+                    alt="Cover of the book Uzumaki Coloring Book">
+                <img id="uzumaki-1" src="img/books-uzumaki-vol-1.png" alt="Cover of the book Uzumaki volume 1">
+                <img id="uzumaki-2" src="img/books-uzumaki-vol-2.png" alt="Cover of the book Uzumaki volume 2">
+                <img id="uzumaki-3" src="img/books-uzumaki-vol-3.png" alt="Cover of the book Uzumaki volume 3">
+                <img id="venus" src="img/books-venus-in-the-blind-spot.png"
+                    alt="Cover of the book Venus in the Blind Spot">
+            </div>
+        </article>
+    </main>
+
+    <!-- ==========FOOTER========== -->
+    <footer>
+        <div id="footer-img-container">
+            <img src="img/header-img.png"
+                alt="Girl staring at another girl with her hair floating above her curled into spirals, a group of people are behind the girl with spiral hair staring in shock">
+        </div>
+        <ul>
+            <li>
+                <p>&copy;JunjiIto11234 2024</p>
+            </li>
+            <li>
+                <address><a href="mailto:junjiito11234@gmail.com">junjiito11234@gmail.com</a></address>
+            </li>
+            <!-- I have chosen to open up the privacy policy in a seperate tab as it makes more sense when opening a document for it to not replace the page you are already on-->
+            <li><a target="_blank" href="doc/privacy-policy.pdf" type="file/pdf"> Privacy Policy</a></li>
+            <li><a href="#header"><span class="fa-solid fa-arrow-up fa-2xl"></span></a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
